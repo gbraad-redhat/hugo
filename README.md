@@ -1,14 +1,25 @@
-Hugo
-====
+Fedora image for Hugo-based generation
+======================================
 
-## Build
 
-```shell
-$ podman build -t hugo -f Containerfile .
+This Fedora container image contains:
+
+  - hugo: https://github.com/gohugoio/hugo  
+    The world’s fastest framework for building websites
+
+
+## Usage instructions
+Start the container in the folder that contains your blog source
+
+```bash
+$ podman run --rm -v $PWD:/workspace hugo
 ```
 
-## Usage
+This will generate a `public` output.
 
-```shell
-$ podman run --rm -v $PWD:/workspace hugo
+
+## Build container
+
+```bash
+$ podman build -t hugo -f Containerfile .
 ```
