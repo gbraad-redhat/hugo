@@ -1,7 +1,7 @@
 FROM registry.fedoraproject.org/fedora:40 AS downloader
 
 
-RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_0.92.2_Linux-64bit.tar.gz -o hugo.tar.gz \
+RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.127.0/hugo_0.127.0_Linux-64bit.tar.gz -o hugo.tar.gz \
     && tar -zxvf hugo.tar.gz
 
 
@@ -13,4 +13,4 @@ RUN mkdir -p /workspace
 VOLUME /workspace
 WORKDIR /workspace
 
-CMD ["hugo"]
+ENTRYPOINT ["/usr/bin/hugo"]
